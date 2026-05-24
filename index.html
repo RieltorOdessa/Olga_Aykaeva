@@ -38,6 +38,7 @@
             letter-spacing: 0.3px;
             position: relative;
             overflow-x: hidden;
+            padding-top: 90px;
         }
 
         body::before {
@@ -151,12 +152,19 @@
             background: linear-gradient(180deg, var(--black) 0%, var(--dark-charcoal) 100%);
             color: var(--platinum);
             padding: 1.5rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(180, 153, 104, 0.2);
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header.hide {
+            transform: translateY(-100%);
         }
 
         .header-content {
@@ -1474,7 +1482,6 @@
 
             .lang-selector {
                 gap: 0.3rem;
-                margin-top: -0.60rem;
                 margin-left: 0.5rem;
                 padding-left: 0.5rem;
                 border-left: 1px solid rgba(180, 153, 104, 0.2);
@@ -1487,7 +1494,11 @@
             }
 
             header {
-                padding: 1rem 0;
+                padding: 0.8rem 0;
+            }
+
+            body {
+                padding-top: 70px;
             }
 
             .hero {
@@ -1814,7 +1825,6 @@
 
             .lang-selector {
                 gap: 0.15rem;
-                margin-top: -0.60rem;
                 margin-left: 0.25rem;
                 padding-left: 0.25rem;
             }
@@ -2698,6 +2708,36 @@
                     }
                 });
             });
+        });
+
+        // Hide/Show Header on Scroll
+        let lastScrollTop = 0;
+        let isScrollingDown = false;
+        const header = document.getElementById('header');
+        const scrollThreshold = 50; // Минимальное расстояние для срабатывания
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (Math.abs(currentScroll - lastScrollTop) < scrollThreshold) {
+                return;
+            }
+
+            if (currentScroll > lastScrollTop && currentScroll > 100) {
+                // Scroll DOWN - hide header
+                if (!isScrollingDown) {
+                    header.classList.add('hide');
+                    isScrollingDown = true;
+                }
+            } else {
+                // Scroll UP - show header
+                if (isScrollingDown) {
+                    header.classList.remove('hide');
+                    isScrollingDown = false;
+                }
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
 
         loadData();
