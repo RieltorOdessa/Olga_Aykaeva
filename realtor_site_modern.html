@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olga Aikaeva | Premium Real Estate Odesa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --dark-charcoal: #1a1a1a;
+            --deep-gray: #252525;
+            --medium-gray: #3a3a3a;
+            --light-gray: #565656;
+            --lighter-gray: #7a7a7a;
+            --platinum: #e8e8e8;
+            --silver: #f5f5f5;
+            --accent-gold: #b89968;
+            --accent-light: #c4b5a0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-charcoal) 50%, var(--deep-gray) 100%);
+            color: var(--platinum);
+            line-height: 1.6;
+            min-height: 100vh;
+            letter-spacing: 0.3px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(180, 153, 104, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(100, 100, 100, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shimmerBorder {
+            0% {
+                box-shadow: inset 0 0 10px rgba(180, 153, 104, 0), 
+                           0 0 20px rgba(180, 153, 104, 0.1);
+            }
+            50% {
+                box-shadow: inset 0 0 20px rgba(180, 153, 104, 0.1), 
+                           0 0 40px rgba(180, 153, 104, 0.2);
+            }
+            100% {
+                box-shadow: inset 0 0 10px rgba(180, 153, 104, 0), 
+                           0 0 20px rgba(180, 153, 104, 0.1);
+            }
+        }
+
+        @keyframes floatingImage {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glowText {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(180, 153, 104, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 25px rgba(180, 153, 104, 0.6);
+            }
+        }
+
+        @keyframes pulseAccent {
+            0%, 100% {
+                background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-light) 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-gold) 100%);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .slide-in-left {
+            animation: slideInFromLeft 1.2s ease-out;
+        }
+
+        .slide-in-right {
+            animation: slideInFromRight 1.2s ease-out;
+        }
+
+        .floating {
+            animation: floatingImage 4s ease-in-out infinite;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark-charcoal) 100%);
+            color: var(--platinum);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(180, 153, 104, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--platinum);
+            letter-spacing: 3px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: uppercase;
+        }
+
+        .logo:hover {
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+        }
+
+        .logo i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--platinum);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-weight: 300;
+            font-size: 0.9rem;
+            position: relative;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 1rem;
+            margin-left: 4rem;
+            padding-left: 4rem;
+            border-left: 1px solid rgba(180, 153, 104, 0.3);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--lighter-gray);
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.4s ease;
+            padding: 0.6rem 1rem;
+            border-radius: 2px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .lang-btn.active {
+            color: var(--accent-gold);
+            background: rgba(180, 153, 104, 0.1);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .lang-btn:hover {
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-charcoal) 50%, var(--deep-gray) 100%);
+            padding: 8rem 4rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(180, 153, 104, 0.15);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -300px;
+            right: -300px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(180, 153, 104, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatingImage 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(100, 100, 100, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1500px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--platinum);
+            font-weight: 300;
+            letter-spacing: -1px;
+            animation: slideInFromLeft 1.2s ease-out;
+        }
+
+        .hero-text h1 .accent {
+            color: var(--accent-gold);
+            font-weight: 400;
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            color: var(--lighter-gray);
+            margin-bottom: 3rem;
+            line-height: 1.9;
+            animation: slideInFromLeft 1.4s ease-out;
+            font-weight: 300;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInFromRight 1.2s ease-out;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(180, 153, 104, 0.3);
+            transition: all 0.6s ease;
+            animation: shimmerBorder 3s ease-in-out infinite;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-light) 100%);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 400;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--accent-gold);
+            cursor: pointer;
+            margin-right: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(180, 153, 104, 0.3);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .cta-button.outline:hover {
+            background: var(--accent-gold);
+            color: var(--black);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 8rem 0;
+            border-bottom: 1px solid rgba(180, 153, 104, 0.1);
+        }
+
+        section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            color: var(--platinum);
+            position: relative;
+            padding-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            border-radius: 1px;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--dark-charcoal) 0%, var(--deep-gray) 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-size: 1.6rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--platinum);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .about-text p {
+            color: var(--lighter-gray);
+            line-height: 1.95;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin: 2.5rem 0;
+        }
+
+        .about-text li {
+            padding: 1.2rem 0 1.2rem 2.5rem;
+            position: relative;
+            color: var(--lighter-gray);
+            line-height: 1.85;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .about-text li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.4rem;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+        }
+
+        .about-highlight {
+            background: linear-gradient(135deg, rgba(180, 153, 104, 0.08) 0%, rgba(180, 153, 104, 0.03) 100%);
+            padding: 3rem;
+            border-radius: 6px;
+            border-left: 2px solid var(--accent-gold);
+            margin: 3rem 0;
+            box-shadow: inset 0 1px 3px rgba(180, 153, 104, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .about-highlight::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(180, 153, 104, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about-highlight:hover {
+            box-shadow: inset 0 1px 3px rgba(180, 153, 104, 0.2), 0 10px 30px rgba(180, 153, 104, 0.1);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-charcoal) 100%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, var(--deep-gray) 0%, var(--medium-gray) 100%);
+            padding: 3rem;
+            border-radius: 6px;
+            border: 1px solid rgba(180, 153, 104, 0.2);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: fadeInUp 1s ease-out;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(180, 153, 104, 0.4);
+        }
+
+        .review-card:hover::before {
+            opacity: 1;
+        }
+
+        .review-stars {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: var(--lighter-gray);
+            margin-bottom: 2rem;
+            line-height: 1.95;
+            font-style: italic;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .review-author {
+            font-weight: 400;
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Properties Grid */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .property-card {
+            background: linear-gradient(135deg, var(--deep-gray) 0%, var(--medium-gray) 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(180, 153, 104, 0.2);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: fadeInUp 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .property-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(180, 153, 104, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .property-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.4);
+            border-color: rgba(180, 153, 104, 0.4);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--lighter-gray);
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .property-card:hover .property-image img {
+            transform: scale(1.1);
+        }
+
+        .property-info {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .property-type {
+            display: inline-block;
+            background: rgba(180, 153, 104, 0.15);
+            color: var(--accent-gold);
+            padding: 0.6rem 1.4rem;
+            border-radius: 2px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(180, 153, 104, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .property-card:hover .property-type {
+            background: rgba(180, 153, 104, 0.25);
+            border-color: var(--accent-gold);
+        }
+
+        .property-title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--platinum);
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+
+        .property-location {
+            color: var(--lighter-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 300;
+        }
+
+        .property-price {
+            font-size: 2rem;
+            color: var(--platinum);
+            font-weight: 300;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .property-price .currency {
+            color: var(--accent-gold);
+            font-weight: 400;
+        }
+
+        .property-details {
+            font-size: 0.95rem;
+            color: var(--lighter-gray);
+            margin-bottom: 2rem;
+            line-height: 1.85;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-weight: 300;
+        }
+
+        .property-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .property-detail-item i {
+            color: var(--accent-gold);
+            width: 18px;
+        }
+
+        .property-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-light) 100%);
+            color: var(--black);
+            border: 1px solid var(--accent-gold);
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 400;
+            transition: all 0.4s ease;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+        }
+
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(180, 153, 104, 0.3);
+        }
+
+        .delete-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 1rem 1.5rem;
+            background: rgba(200, 50, 50, 0.1);
+            color: #e8a0a0;
+            border: 1px solid rgba(200, 50, 50, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 400;
+            transition: all 0.4s ease;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .delete-btn:hover {
+            background: rgba(200, 50, 50, 0.3);
+            border-color: #e8a0a0;
+            color: var(--platinum);
+        }
+
+        .edit-btn {
+            flex: 1;
+            min-width: 140px;
+            background: rgba(180, 153, 104, 0.2);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 1rem 1.5rem;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 400;
+            transition: all 0.4s ease;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .edit-btn:hover {
+            background: var(--accent-gold);
+            color: var(--black);
+        }
+
+        /* Login Form */
+        .login-container {
+            max-width: 440px;
+            margin: 5rem auto;
+            padding: 3.5rem;
+            background: linear-gradient(135deg, var(--deep-gray) 0%, var(--medium-gray) 100%);
+            border: 1px solid rgba(180, 153, 104, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--platinum);
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.9rem;
+            color: var(--platinum);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.1rem;
+            border: 1px solid rgba(180, 153, 104, 0.3);
+            border-radius: 3px;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, rgba(58, 58, 58, 0.5) 0%, rgba(42, 42, 42, 0.5) 100%);
+            color: var(--platinum);
+            font-family: inherit;
+            font-weight: 300;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(180, 153, 104, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(180, 153, 104, 0.15);
+            background: linear-gradient(135deg, rgba(58, 58, 58, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* Admin Section */
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: linear-gradient(135deg, var(--dark-charcoal) 0%, var(--deep-gray) 100%);
+            border-radius: 8px;
+            padding: 3.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(180, 153, 104, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(180, 153, 104, 0.2);
+            flex-wrap: wrap;
+        }
+
+        .admin-tab {
+            padding: 1.3rem 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 400;
+            color: var(--lighter-gray);
+            transition: all 0.4s ease;
+            position: relative;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .admin-tab.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        .admin-tab:hover {
+            color: var(--platinum);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .file-input {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .file-input input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem;
+            border: 2px dashed var(--accent-gold);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, rgba(180, 153, 104, 0.05) 0%, rgba(180, 153, 104, 0.01) 100%);
+            position: relative;
+        }
+
+        .file-label:hover {
+            border-color: var(--platinum);
+            background: linear-gradient(135deg, rgba(180, 153, 104, 0.1) 0%, rgba(180, 153, 104, 0.05) 100%);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--medium-gray);
+            border: 1px solid rgba(180, 153, 104, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item .delete-photo {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: rgba(200, 50, 50, 0.9);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 2px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .gallery-item .delete-photo:hover {
+            background: #e84a4a;
+            transform: scale(1.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.4rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-light) 100%);
+            color: var(--black);
+            border: 1px solid var(--accent-gold);
+            border-radius: 3px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin-top: 2.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(180, 153, 104, 0.3);
+        }
+
+        .logout-btn {
+            display: block;
+            width: 100%;
+            padding: 1.4rem;
+            background: linear-gradient(135deg, rgba(200, 50, 50, 0.8) 0%, rgba(180, 40, 40, 0.8) 100%);
+            color: var(--platinum);
+            border: 1px solid rgba(200, 50, 50, 0.6);
+            border-radius: 3px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 2.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logout-btn:hover {
+            background: linear-gradient(135deg, rgba(220, 60, 60, 0.9) 0%, rgba(200, 50, 50, 0.9) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(200, 50, 50, 0.25);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.3s ease-out;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--deep-gray) 0%, var(--medium-gray) 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeInUp 0.4s ease-out;
+            border: 1px solid rgba(180, 153, 104, 0.3);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--lighter-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: linear-gradient(135deg, rgba(180, 153, 104, 0.12) 0%, rgba(180, 153, 104, 0.05) 100%);
+            padding: 3rem;
+            border-radius: 6px;
+            border-left: 2px solid var(--accent-gold);
+            margin-top: 3rem;
+            box-shadow: inset 0 1px 3px rgba(180, 153, 104, 0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--platinum);
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info p {
+            color: var(--lighter-gray);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .contact-info i {
+            color: var(--accent-gold);
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .contact-info a:hover {
+            color: var(--platinum);
+            text-decoration: underline;
+        }
+
+        /* Messages */
+        .success-message,
+        .error-message {
+            padding: 1.3rem;
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            display: none;
+            animation: fadeInUp 0.3s ease-out;
+            font-weight: 400;
+            font-size: 0.95rem;
+            border-left: 3px solid;
+        }
+
+        .success-message.active {
+            display: block;
+            background: rgba(100, 180, 100, 0.15);
+            color: #b0e0b0;
+            border-left-color: #80d080;
+        }
+
+        .error-message.active {
+            display: block;
+            background: rgba(200, 50, 50, 0.15);
+            color: #e0a0a0;
+            border-left-color: #d04040;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 5rem 2rem;
+            color: var(--lighter-gray);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            opacity: 0.2;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+            color: var(--lighter-gray);
+        }
+
+        .properties-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 0 2rem;
+            }
+
+            .container {
+                padding: 0 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                order: 3;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .lang-selector {
+                order: 2;
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 2rem 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero {
+                padding: 4rem 2rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .admin-tabs {
+                flex-direction: column;
+            }
+
+            .admin-tab {
+                border-bottom: none;
+                border-left: 3px solid rgba(180, 153, 104, 0.2);
+                padding-left: 1.5rem;
+            }
+
+            .admin-tab.active {
+                border-left-color: var(--accent-gold);
+            }
+
+            .hero::before {
+                display: none;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+
+            .property-actions {
+                flex-direction: column;
+            }
+
+            .contact-btn,
+            .delete-btn,
+            .edit-btn {
+                min-width: auto;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-light));
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--accent-light), var(--accent-gold));
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <a href="#" class="logo" onclick="setPage('home'); return false;">
+                <i class="fas fa-building"></i>
+                <span data-en="OLGA AIKAEVA" data-uk="OLGA AIKAEVA" data-ru="OLGA AIKAEVA">OLGA AIKAEVA</span>
+            </a>
+            <nav id="nav">
+                <a href="#" onclick="setPage('home'); return false;" data-en="Home" data-uk="Головна" data-ru="Главная">Головна</a>
+                <a href="#" onclick="setPage('about'); return false;" data-en="About" data-uk="Про мене" data-ru="Обо мне">Про мене</a>
+                <a href="#" onclick="setPage('reviews'); return false;" data-en="Reviews" data-uk="Відзиви" data-ru="Отзывы">Відзиви</a>
+                <a href="#" onclick="setPage('properties'); return false;" data-en="Properties" data-uk="Об'єкти" data-ru="Объекты">Об'єкти</a>
+                <a href="#" onclick="setPage('admin'); return false;" data-en="Admin" data-uk="Панель" data-ru="Панель">Панель</a>
+            </nav>
+            <div class="lang-selector">
+                <button class="lang-btn active" onclick="setLanguage('uk')" title="Українська">УК</button>
+                <button class="lang-btn" onclick="setLanguage('ru')" title="Русский">РУ</button>
+                <button class="lang-btn" onclick="setLanguage('en')" title="English">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home-page" class="page">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-text fade-in-up">
+                        <h1 data-en="Crafted Excellence in Real Estate" data-uk="Давайте знакомитись!" data-ru="Давайте знакомиться!">Давайте<br><span class="accent">знакомитись!</span></h1>
+                        <p data-en="Professional real estate solutions with precision and expertise. Over 17 years of experience in Odesa's premium property market." data-uk="Мене звати Ольга Айкаева, я — професійний рієлтор у місті Одеса з досвідом роботи в сфері нерухомості понад 17 років." data-ru="Меня зовут Ольга Айкаева, я — профессиональный риэлтор в городе Одесса с опытом работы в недвижимости более 17 лет.">Мене звати Ольга Айкаева, я — професійний рієлтор у місті Одеса з досвідом роботи в сфері нерухомості понад 17 років.</p>
+                        <button class="cta-button" onclick="setPage('about'); return false;" data-en="Explore" data-uk="Дізнатись" data-ru="Узнать">Дізнатись більше</button>
+                        <button class="cta-button outline" onclick="setPage('properties'); return false;" data-en="Discover" data-uk="Переглянути" data-ru="Посмотреть">Переглянути об'єкти</button>
+                    </div>
+                    <div class="hero-image floating">
+                        <img src="https://via.placeholder.com/550x680/252525/b89968?text=Premium+Agent" alt="Olga Aikaeva">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about-page" class="page about" style="display: none;">
+            <div class="container fade-in-up">
+                <h2 data-en="Premium Expertise" data-uk="Професійний профіль" data-ru="Профессиональный профиль">Професійний профіль</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 data-en="Specialist Credentials" data-uk="Ключова експертиза" data-ru="Ключевая экспертиза">Ключова експертиза</h3>
+                        <p data-en="Deep expertise in luxury and standard real estate transactions with unwavering commitment to legal compliance and client satisfaction." data-uk="Я спеціалізуюся на операціях з нерухомістю з глибоким знанням юридичних аспектів. Законність угоди — головний принцип та основа спокою моїх клієнтів." data-ru="Я специализируюсь на операциях с недвижимостью с глубоким знанием юридических аспектов. Законность сделки — главный принцип моей профессиональной практики.">Я спеціалізуюся на операціях з нерухомістю з глибоким знанням юридичних аспектів.</p>
+
+                        <h3 data-en="Market Intelligence" data-uk="Знання ринку" data-ru="Знание рынка">Знання ринку</h3>
+                        <ul>
+                            <li data-en="Real-time market analysis and trend forecasting" data-uk="Аналіз трендів ринку нерухомості Одеси в режимі реального часу" data-ru="Анализ трендов рынка недвижимости Одессы в режиме реального времени">Аналіз трендів ринку в режимі реального часу</li>
+                            <li data-en="Architectural expertise and property valuation" data-uk="Глибоке знання архітектурних проектів та планування" data-ru="Глубокое знание архитектурных проектов и планирования">Глибоке знання архітектурних проектів</li>
+                            <li data-en="Strategic construction company partnerships" data-uk="Прямі партнерства з основними будівельними компаніями" data-ru="Прямые партнерства с основными строительными компаниями">Прямі партнерства з будівельними компаніями</li>
+                            <li data-en="Verified market data and transaction statistics" data-uk="Доступ до перевіреної статистики ринку та даних про продажі" data-ru="Доступ к проверенной статистике рынка и данным о продажах">Доступ до перевіреної статистики ринку</li>
+                        </ul>
+
+                        <h3 data-en="Services Portfolio" data-uk="Надані послуги" data-ru="Предоставляемые услуги">Надані послуги</h3>
+                        <ul>
+                            <li data-en="Secondary market acquisitions and sales" data-uk="Купівля та продаж нерухомості на вторинному ринку" data-ru="Покупка и продажа недвижимости на вторичном рынке">Купівля та продаж нерухомості</li>
+                            <li data-en="Residential property management solutions" data-uk="Управління та оренда житлової нерухомості" data-ru="Управление и аренда жилой недвижимости">Управління та оренда нерухомості</li>
+                            <li data-en="Land and residential development consulting" data-uk="Консультування з придбання будинків та земельних ділянок" data-ru="Консультирование по приобретению домов и земельных участков">Консультування з придбання земельних ділянок</li>
+                            <li data-en="Commercial property transactions" data-uk="Операції та аналіз комерційної нерухомості" data-ru="Операции и анализ коммерческой недвижимости">Операції з комерційної нерухомості</li>
+                            <li data-en="Pre-construction investment opportunities" data-uk="Інвестиції у нерухомість на етапі будівництва" data-ru="Инвестиции в недвижимость на этапе строительства">Інвестиції у новострій</li>
+                            <li data-en="International investor guidance" data-uk="Консультування іноземних інвесторів" data-ru="Консультирование иностранных инвесторов">Консультування іноземних інвесторів</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="about-highlight slide-in-right">
+                            <h3 data-en="Professional Philosophy" data-uk="Професійні цінності" data-ru="Профессиональные ценности">Професійні цінності</h3>
+                            <p data-en="Excellence is delivered through meticulous attention to detail, unwavering integrity, and relentless focus on client success. Every transaction reflects a commitment to precision and professionalism." data-uk="Я віддана наданню виключного обслуговування завдяки професіоналізму, прискіпливій увазі до деталей та постійному сфокусуванню на задоволенні клієнтів." data-ru="Я привержена предоставлению исключительного обслуживания через профессионализм, внимательное отношение к деталям и постоянный фокус на удовлетворение клиентов.">Я віддана наданню виключного обслуговування завдяки професіоналізму та прискіпливій увазі до деталей.</p>
+                        </div>
+                        <div class="contact-info slide-in-right" style="animation-delay: 0.2s;">
+                            <h3 data-en="Direct Contact" data-uk="Контактна інформація" data-ru="Контактная информация">Контактна інформація</h3>
+                            <p>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+380631321288">+38 063 132 12 88</a>
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Odesa, Ukraine" data-uk="Одеса, Україна" data-ru="Одесса, Украина">Одеса, Україна</span>
+                            </p>
+                            <p>
+                                <i class="fab fa-telegram"></i>
+                                <a href="https://t.me/Olga_Aikaeva_rieltor_Odessa" target="_blank">@Olga_Aikaeva_rieltor_Odessa</a>
+                            </p>
+                            <p>
+                                <i class="fab fa-instagram"></i>
+                                <a href="https://www.instagram.com/p/DSo7iT2iNuF/?igsh=MWJuMXllZjBmNWhubg==" target="_blank">Instagram Profile</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Page -->
+        <section id="reviews-page" class="page reviews" style="display: none;">
+            <div class="container fade-in-up">
+                <h2 data-en="Client Testimonials" data-uk="Відзиви клієнтів" data-ru="Отзывы клиентов">Відзиви клієнтів</h2>
+                <div class="reviews-grid" id="reviews-container">
+                    <!-- Reviews will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Page -->
+        <section id="properties-page" class="page" style="display: none;">
+            <div class="container fade-in-up">
+                <h2 data-en="Premium Properties" data-uk="Доступні об'єкти" data-ru="Доступные объекты">Доступні об'єкти</h2>
+                <div class="properties-grid" id="properties-container">
+                    <!-- Properties will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Page -->
+        <section id="admin-page" class="page" style="display: none;">
+            <div class="container fade-in-up">
+                <h2 data-en="Administration" data-uk="Адміністративна панель" data-ru="Административная панель">Адміністративна панель</h2>
+                
+                <div id="login-form" class="login-container">
+                    <h2 data-en="Administrator Access" data-uk="Вхід адміністратора" data-ru="Вход администратора">Вхід адміністратора</h2>
+                    <form onsubmit="loginAdmin(event)">
+                        <div class="form-group">
+                            <label data-en="Username" data-uk="Ім'я користувача" data-ru="Имя пользователя">Ім'я користувача</label>
+                            <input type="text" id="username" placeholder="Olga104372" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Password" data-uk="Пароль" data-ru="Пароль">Пароль</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="submit-btn" data-en="Access" data-uk="Увійти" data-ru="Войти">УВІЙТИ</button>
+                    </form>
+                </div>
+
+                <div id="admin-panel" class="admin-panel" style="display: none;">
+                    <div class="success-message" id="successMessage"></div>
+                    <div class="error-message" id="errorMessage"></div>
+
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" onclick="switchAdminTab('properties')" data-en="Properties" data-uk="Об'єкти" data-ru="Объекты">ОБ'ЄКТ</button>
+                        <button class="admin-tab" onclick="switchAdminTab('reviews')" data-en="Reviews" data-uk="Відзиви" data-ru="Отзывы">ВІДЗИВИ</button>
+                        <button class="admin-tab" onclick="switchAdminTab('settings')" data-en="Account" data-uk="Налаштування" data-ru="Настройки">НАЛАШТУВАННЯ</button>
+                    </div>
+
+                    <!-- Properties Tab -->
+                    <div id="properties-tab" class="tab-content active">
+                        <div>
+                            <h3 data-en="Add Property" data-uk="Додати нову квартиру" data-ru="Добавить новую квартиру">Додати нову квартиру</h3>
+                            <form id="propertyForm" onsubmit="addProperty(event)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label data-en="Title" data-uk="Назва об'єкту" data-ru="Название объекта">Назва об'єкту</label>
+                                        <input type="text" id="prop-title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label data-en="Price" data-uk="Ціна (USD)" data-ru="Цена (USD)">Ціна (USD)</label>
+                                        <input type="number" id="prop-price" required step="1000">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label data-en="Type" data-uk="Тип об'єкту" data-ru="Тип объекта">Тип об'єкту</label>
+                                        <select id="prop-type" required>
+                                            <option value="">Виберіть</option>
+                                            <option value="Apartment">Квартира</option>
+                                            <option value="House">Будинок</option>
+                                            <option value="Land">Земля</option>
+                                            <option value="Commercial">Комерційна</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label data-en="Location" data-uk="Локація" data-ru="Локация">Локація</label>
+                                        <input type="text" id="prop-location" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label data-en="Area" data-uk="Площа (м²)" data-ru="Площадь (м²)">Площа (м²)</label>
+                                        <input type="number" id="prop-area" required step="0.1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label data-en="Rooms" data-uk="Кімнати" data-ru="Комнаты">Кімнати</label>
+                                        <input type="number" id="prop-rooms" required>
+                                    </div>
+                                </div>
+                                <div class="form-row full">
+                                    <div class="form-group">
+                                        <label data-en="Description" data-uk="Опис об'єкту" data-ru="Описание объекта">Опис об'єкту</label>
+                                        <textarea id="prop-description" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row full">
+                                    <div class="form-group">
+                                        <label data-en="Upload Photos" data-uk="Завантажити фото" data-ru="Загрузить фото">Завантажити фото</label>
+                                        <div class="file-input">
+                                            <input type="file" id="prop-photos" multiple accept="image/*" onchange="previewPhotos(event)">
+                                            <label for="prop-photos" class="file-label">
+                                                <div style="text-align: center;">
+                                                    <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
+                                                    <p style="font-weight: 400;" data-en="Click to upload" data-uk="Натисніть для завантаження" data-ru="Нажмите для загрузки">Натисніть для завантаження</p>
+                                                    <p style="font-size: 0.85rem; color: var(--lighter-gray);">Drag & drop</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="gallery" id="photoPreview"></div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="submit-btn" data-en="Add" data-uk="Додати квартиру" data-ru="Добавить квартиру">ДОДАТИ КВАРТИРУ</button>
+                            </form>
+                        </div>
+
+                        <div style="margin-top: 4rem;">
+                            <h3 data-en="Manage" data-uk="Управління об'єктами" data-ru="Управление объектами">Управління об'єктами</h3>
+                            <div id="admin-properties" class="properties-list">
+                                <!-- Admin properties will load here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div id="reviews-tab" class="tab-content">
+                        <div>
+                            <h3 data-en="Add Review" data-uk="Додати відзив" data-ru="Добавить отзыв">Додати відзив</h3>
+                            <form onsubmit="addReview(event)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label data-en="Name" data-uk="Ім'я клієнта" data-ru="Имя клиента">Ім'я клієнта</label>
+                                        <input type="text" id="review-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label data-en="Rating" data-uk="Рейтинг" data-ru="Рейтинг">Рейтинг</label>
+                                        <select id="review-rating" required>
+                                            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+                                            <option value="4">⭐⭐⭐⭐ 4</option>
+                                            <option value="3">⭐⭐⭐ 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row full">
+                                    <div class="form-group">
+                                        <label data-en="Text" data-uk="Текст відзиву" data-ru="Текст отзыва">Текст відзиву</label>
+                                        <textarea id="review-text" required></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="submit-btn" data-en="Add Review" data-uk="Додати відзив" data-ru="Добавить отзыв">ДОДАТИ ВІДЗИВ</button>
+                            </form>
+                        </div>
+
+                        <div style="margin-top: 4rem;">
+                            <h3 data-en="Reviews" data-uk="Управління відзивами" data-ru="Управление отзывами">Управління відзивами</h3>
+                            <div id="admin-reviews" class="reviews-grid">
+                                <!-- Admin reviews will load here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div id="settings-tab" class="tab-content">
+                        <div>
+                            <h3 data-en="Settings" data-uk="Налаштування облікового запису" data-ru="Параметры учетной записи">Налаштування облікового запису</h3>
+                            <div class="about-highlight">
+                                <p style="margin: 0;" data-en="User:" data-uk="Користувач:" data-ru="Пользователь:">Користувач: <strong>Olga104372</strong></p>
+                            </div>
+                            <button class="logout-btn" onclick="logoutAdmin()" data-en="Logout" data-uk="Вийти" data-ru="Выход">ВИЙТИ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let currentLanguage = 'uk';
+        let isLoggedIn = false;
+        let properties = [];
+        let reviews = [];
+
+        function loadData() {
+            const storedProperties = localStorage.getItem('properties');
+            const storedReviews = localStorage.getItem('reviews');
+            
+            if (storedProperties) {
+                properties = JSON.parse(storedProperties);
+            } else {
+                properties = [
+                    {
+                        id: 1,
+                        title: 'Сучасна квартира з видом на море',
+                        price: 150000,
+                        type: 'Apartment',
+                        location: 'Приморський район',
+                        area: 85,
+                        rooms: 2,
+                        description: 'Елегантна двокімнатна квартира з панорамним видом на морське узбережжя. Сучасний ремонт, преміум матеріали.',
+                        photos: []
+                    },
+                    {
+                        id: 2,
+                        title: 'Сімейний будинок в передмісті',
+                        price: 250000,
+                        type: 'House',
+                        location: 'Пригород Одеси',
+                        area: 200,
+                        rooms: 4,
+                        description: 'Просторий приватний будинок з гаражем, садибою та усім необхідним. Екологічно чистий район.',
+                        photos: []
+                    }
+                ];
+                saveData();
+            }
+
+            if (storedReviews) {
+                reviews = JSON.parse(storedReviews);
+            } else {
+                reviews = [
+                    {
+                        id: 1,
+                        name: 'Марія К.',
+                        rating: 5,
+                        text: 'Ольга продемонструвала справжній професіоналізм. Допомогла знайти ідеальну квартиру за короткий час.'
+                    },
+                    {
+                        id: 2,
+                        name: 'Іван П.',
+                        rating: 5,
+                        text: 'Виключна робота при продажі мого будинку. Все пройшло гладко та в строк. Дуже задоволений.'
+                    },
+                    {
+                        id: 3,
+                        name: 'Анна С.',
+                        rating: 5,
+                        text: 'Ольга враховувала всі побажання та знайшла найкращий варіант для моєї сім\'ї.'
+                    }
+                ];
+                saveData();
+            }
+        }
+
+        function saveData() {
+            localStorage.setItem('properties', JSON.stringify(properties));
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+        }
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            updatePageTranslations();
+        }
+
+        function updatePageTranslations() {
+            document.querySelectorAll('[data-en][data-uk][data-ru]').forEach(element => {
+                const text = element.getAttribute(`data-${currentLanguage}`);
+                if (text && !element.querySelector('input, textarea, select')) {
+                    element.textContent = text;
+                }
+            });
+        }
+
+        function setPage(page) {
+            document.querySelectorAll('.page').forEach(p => {
+                p.style.display = 'none';
+            });
+            document.getElementById(page + '-page').style.display = 'block';
+            window.scrollTo(0, 0);
+
+            if (page === 'home') {
+                loadHomePage();
+            } else if (page === 'reviews') {
+                loadReviewsPage();
+            } else if (page === 'properties') {
+                loadPropertiesPage();
+            } else if (page === 'admin') {
+                loadAdminPage();
+            }
+
+            updatePageTranslations();
+        }
+
+        function loadHomePage() {
+            updatePageTranslations();
+        }
+
+        function loadReviewsPage() {
+            const container = document.getElementById('reviews-container');
+            container.innerHTML = '';
+
+            if (reviews.length === 0) {
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><i class="fas fa-star"></i><p>Немає відзивів</p></div>';
+            } else {
+                reviews.forEach(review => {
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = 'review-card';
+                    const stars = '⭐'.repeat(review.rating);
+                    reviewCard.innerHTML = `
+                        <div class="review-stars">${stars}</div>
+                        <p class="review-text">"${review.text}"</p>
+                        <p class="review-author">— ${review.name}</p>
+                    `;
+                    container.appendChild(reviewCard);
+                });
+            }
+        }
+
+        function loadPropertiesPage() {
+            const container = document.getElementById('properties-container');
+            container.innerHTML = '';
+
+            if (properties.length === 0) {
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><i class="fas fa-home"></i><p>Немає об\'єктів</p></div>';
+            } else {
+                properties.forEach(prop => {
+                    const card = createPropertyCard(prop, false);
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        function createPropertyCard(prop, isAdmin = false) {
+            const card = document.createElement('div');
+            card.className = 'property-card';
+
+            const imageHtml = prop.photos && prop.photos.length > 0 
+                ? `<img src="${prop.photos[0]}" alt="${prop.title}">`
+                : `<div style="display: flex; align-items: center; justify-content: center; color: var(--lighter-gray); font-size: 3rem;"><i class="fas fa-image"></i></div>`;
+
+            card.innerHTML = `
+                <div class="property-image">
+                    ${imageHtml}
+                </div>
+                <div class="property-info">
+                    <div class="property-type">${prop.type}</div>
+                    <h3 class="property-title">${prop.title}</h3>
+                    <p class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        ${prop.location}
+                    </p>
+                    <p class="property-price">
+                        <span class="currency">$</span>${prop.price.toLocaleString()}
+                    </p>
+                    <div class="property-details">
+                        <div class="property-detail-item">
+                            <i class="fas fa-ruler-combined"></i> ${prop.area} м²
+                        </div>
+                        <div class="property-detail-item">
+                            <i class="fas fa-door-open"></i> ${prop.rooms} кім.
+                        </div>
+                    </div>
+                    <p class="property-details">${prop.description}</p>
+                    <div class="property-actions">
+                        <button class="contact-btn" onclick="contactRealtor('${prop.id}')">ЗВ'ЯЗАТИСЯ</button>
+                        ${isAdmin ? `
+                            <button class="edit-btn" onclick="editProperty(${prop.id})">РЕДАГУВАТИ</button>
+                            <button class="delete-btn" onclick="deleteProperty(${prop.id})">ВИДАЛИТИ</button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        function contactRealtor(propId) {
+            window.open('https://t.me/Olga_Aikaeva_rieltor_Odessa', '_blank');
+        }
+
+        function loadAdminPage() {
+            const loginForm = document.getElementById('login-form');
+            const adminPanel = document.getElementById('admin-panel');
+
+            if (isLoggedIn) {
+                loginForm.style.display = 'none';
+                adminPanel.style.display = 'block';
+                loadAdminProperties();
+                loadAdminReviews();
+            } else {
+                loginForm.style.display = 'block';
+                adminPanel.style.display = 'none';
+            }
+
+            updatePageTranslations();
+        }
+
+        function loginAdmin(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'Olga104372' && password === 'xa_1@!_l||kfjnv') {
+                isLoggedIn = true;
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('admin-panel').style.display = 'block';
+                loadAdminProperties();
+                loadAdminReviews();
+                updatePageTranslations();
+                showMessage('success', 'Успішний вхід в систему');
+            } else {
+                showMessage('error', 'Неправильні дані входу');
+            }
+        }
+
+        function logoutAdmin() {
+            isLoggedIn = false;
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('propertyForm').reset();
+            setPage('home');
+        }
+
+        function switchAdminTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(t => {
+                t.classList.remove('active');
+            });
+            document.querySelectorAll('.admin-tab').forEach(t => {
+                t.classList.remove('active');
+            });
+            
+            document.getElementById(tab + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function addProperty(e) {
+            e.preventDefault();
+
+            const newProp = {
+                id: Math.max(...properties.map(p => p.id), 0) + 1,
+                title: document.getElementById('prop-title').value,
+                price: parseInt(document.getElementById('prop-price').value),
+                type: document.getElementById('prop-type').value,
+                location: document.getElementById('prop-location').value,
+                area: parseFloat(document.getElementById('prop-area').value),
+                rooms: parseInt(document.getElementById('prop-rooms').value),
+                description: document.getElementById('prop-description').value,
+                photos: []
+            };
+
+            const photoElements = document.getElementById('photoPreview').querySelectorAll('img');
+            photoElements.forEach(img => {
+                newProp.photos.push(img.src);
+            });
+
+            properties.push(newProp);
+            saveData();
+
+            document.getElementById('propertyForm').reset();
+            document.getElementById('photoPreview').innerHTML = '';
+            loadAdminProperties();
+            
+            showMessage('success', 'Квартира успішно додана');
+        }
+
+        function previewPhotos(e) {
+            const preview = document.getElementById('photoPreview');
+            preview.innerHTML = '';
+
+            Array.from(e.target.files).forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+                    div.innerHTML = `
+                        <img src="${event.target.result}" alt="Photo ${index}">
+                        <button type="button" class="delete-photo" onclick="removePhoto(${index})">×</button>
+                    `;
+                    preview.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function removePhoto(index) {
+            const files = document.getElementById('prop-photos').files;
+            const dataTransfer = new DataTransfer();
+            
+            Array.from(files).forEach((file, i) => {
+                if (i !== index) {
+                    dataTransfer.items.add(file);
+                }
+            });
+
+            document.getElementById('prop-photos').files = dataTransfer.files;
+            previewPhotos({target: {files: dataTransfer.files}});
+        }
+
+        function loadAdminProperties() {
+            const container = document.getElementById('admin-properties');
+            container.innerHTML = '';
+
+            if (properties.length === 0) {
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><i class="fas fa-home"></i><p>Об\'єктів ще немає</p></div>';
+            } else {
+                properties.forEach(prop => {
+                    const card = createPropertyCard(prop, true);
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        function editProperty(id) {
+            const prop = properties.find(p => p.id === id);
+            if (prop) {
+                document.getElementById('prop-title').value = prop.title;
+                document.getElementById('prop-price').value = prop.price;
+                document.getElementById('prop-type').value = prop.type;
+                document.getElementById('prop-location').value = prop.location;
+                document.getElementById('prop-area').value = prop.area;
+                document.getElementById('prop-rooms').value = prop.rooms;
+                document.getElementById('prop-description').value = prop.description;
+
+                const preview = document.getElementById('photoPreview');
+                preview.innerHTML = '';
+                prop.photos.forEach((photo, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+                    div.innerHTML = `
+                        <img src="${photo}" alt="Photo">
+                        <button type="button" class="delete-photo" onclick="deletePropertyPhoto(${id}, ${index})">×</button>
+                    `;
+                    preview.appendChild(div);
+                });
+
+                const btn = document.querySelector('#propertyForm .submit-btn');
+                btn.textContent = 'ОНОВИТИ КВАРТИРУ';
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    updateProperty(id);
+                };
+
+                document.getElementById('propertyForm').scrollIntoView({behavior: 'smooth'});
+            }
+        }
+
+        function updateProperty(id) {
+            const prop = properties.find(p => p.id === id);
+            if (prop) {
+                prop.title = document.getElementById('prop-title').value;
+                prop.price = parseInt(document.getElementById('prop-price').value);
+                prop.type = document.getElementById('prop-type').value;
+                prop.location = document.getElementById('prop-location').value;
+                prop.area = parseFloat(document.getElementById('prop-area').value);
+                prop.rooms = parseInt(document.getElementById('prop-rooms').value);
+                prop.description = document.getElementById('prop-description').value;
+
+                const photoElements = document.getElementById('photoPreview').querySelectorAll('img');
+                prop.photos = Array.from(photoElements).map(img => img.src);
+
+                saveData();
+                document.getElementById('propertyForm').reset();
+                document.getElementById('photoPreview').innerHTML = '';
+                
+                const btn = document.querySelector('#propertyForm .submit-btn');
+                btn.textContent = 'ДОДАТИ КВАРТИРУ';
+                btn.onclick = null;
+
+                loadAdminProperties();
+                showMessage('success', 'Квартира успішно оновлена');
+            }
+        }
+
+        function deleteProperty(id) {
+            if (confirm('Видалити цей об\'єкт?')) {
+                properties = properties.filter(p => p.id !== id);
+                saveData();
+                loadAdminProperties();
+                showMessage('success', 'Квартира успішно видалена');
+            }
+        }
+
+        function deletePropertyPhoto(propId, photoIndex) {
+            const prop = properties.find(p => p.id === propId);
+            if (prop) {
+                prop.photos.splice(photoIndex, 1);
+                saveData();
+                editProperty(propId);
+            }
+        }
+
+        function addReview(e) {
+            e.preventDefault();
+
+            const newReview = {
+                id: Math.max(...reviews.map(r => r.id), 0) + 1,
+                name: document.getElementById('review-name').value,
+                rating: parseInt(document.getElementById('review-rating').value),
+                text: document.getElementById('review-text').value
+            };
+
+            reviews.push(newReview);
+            saveData();
+
+            document.getElementById('review-name').value = '';
+            document.getElementById('review-text').value = '';
+            document.getElementById('review-rating').value = '5';
+            
+            loadAdminReviews();
+            showMessage('success', 'Відзив успішно додан');
+        }
+
+        function loadAdminReviews() {
+            const container = document.getElementById('admin-reviews');
+            container.innerHTML = '';
+
+            if (reviews.length === 0) {
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><i class="fas fa-star"></i><p>Відзивів ще немає</p></div>';
+            } else {
+                reviews.forEach(review => {
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = 'review-card';
+                    const stars = '⭐'.repeat(review.rating);
+                    reviewCard.innerHTML = `
+                        <div class="review-stars">${stars}</div>
+                        <p class="review-text">"${review.text}"</p>
+                        <p class="review-author">— ${review.name}</p>
+                        <button class="delete-btn" onclick="deleteReview(${review.id})" style="width: 100%; margin-top: 1.5rem;">ВИДАЛИТИ</button>
+                    `;
+                    container.appendChild(reviewCard);
+                });
+            }
+        }
+
+        function deleteReview(id) {
+            if (confirm('Видалити цей відзив?')) {
+                reviews = reviews.filter(r => r.id !== id);
+                saveData();
+                loadAdminReviews();
+                showMessage('success', 'Відзив успішно видалений');
+            }
+        }
+
+        function showMessage(type, message) {
+            const msgElement = document.getElementById(type === 'success' ? 'successMessage' : 'errorMessage');
+            msgElement.textContent = message;
+            msgElement.classList.add('active');
+
+            setTimeout(() => {
+                msgElement.classList.remove('active');
+            }, 4000);
+        }
+
+        loadData();
+        setPage('home');
+        updatePageTranslations();
+    </script>
+</body>
+</html>
